@@ -1,0 +1,29 @@
+fastapi
+uvicorn[standard]
+scapy
+scikit-learn
+joblib
+pandas
+websockets
+python-jose[cryptography]
+passlib[bcrypt]
+sqlalchemy
+pydantic
+psutil
+python-multipart
+watchdog
+python-dotenv
+google-genai
+python-nmap
+# Feature 3 — Encryption
+cryptography
+# Feature 4 — Fog Node HTTP forwarding
+httpx
+# Feature 5 — TFLite (optional, install one of these)
+# tflite-runtime   # lightweight, recommended for edge
+# tensorflow       # full install, needed for train_tflite.py
+pytest
+# Enhancement — MFA/TOTP
+pyotp
+qrcode[pil]
+Pillow

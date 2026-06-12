@@ -1,0 +1,14 @@
+#
+# Sample Snort rules for LightGuard / thesis appendix
+# Adjust paths after installing Snort; include with: snort -c snort.conf
+# Sources: customise SID range (1:9000000+) to avoid conflicts with ET/open rulesets.
+#
+
+# Port scan heuristic — many distinct TCP SYN to one host (tune thresholds for your LAN)
+alert tcp any any -> $HOME_NET any (msg:"LIGHTGUARD Possible horizontal port scan"; flags:S; detection_filter:track by_dst, count 30, seconds 10; classtype:attempted-recon; sid:9100001; rev:1;)
+
+# SQL injection-ish strings on HTTP — lab use only (high false-positive risk without tuning)
+alert tcp any any -> $HOME_NET $HTTP_PORTS (msg:"LIGHTGUARD URI SQL injection pattern"; flow:to_server; content:"union"; nocase; content:"select"; distance:0; nocase; classtype:web-application-attack; sid:9100002; rev:1;)
+
+# ICMP flood — noisy on busy networks
+alert icmp any any -> any any (msg:"LIGHTGUARD ICMP flood threshold"; detection_filter:track by_src, count 100, seconds 5; classtype:denial-of-service; sid:9100003; rev:1;)
