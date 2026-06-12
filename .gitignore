@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Secrets & keys — NEVER commit these
+*.env
+config/lightguard.env
+config/*.key
+config/*.pem
+config/*.crt
+ssl/
+*.p12
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+lightguard_test.sqlite
+
+# ML model binary (large file — store in Git LFS or artifact registry)
+ml/model.pkl
+ml/tflite_model/*.tflite
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs
+*.log
+fog_node_log.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
