@@ -1314,6 +1314,266 @@
                     }
                 ],
                 "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "d7cb791d-f72d-452b-bca8-500d29839ea0",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "ed28d7af-6005-4544-a22f-d85170e42c7e",
+                        "port_number": 1
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "69db3534-e525-4eeb-9eeb-d2a6ba9e362a",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "fe1f71b6-7ed5-4ba9-90c3-b15d6ab67b15",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e2"
+                        },
+                        "node_id": "69db3534-e525-4eeb-9eeb-d2a6ba9e362a",
+                        "port_number": 2
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "bd766e2f-34ac-403b-948c-e96296f3f4fc",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "3e34ca97-3fc4-4310-b0b8-f07da3916948",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 1
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "97c967e3-f40d-42a2-9e98-f3ae40d3404c",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "568915a0-0724-4b48-a325-23dd31f808da",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e2"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 2
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "a69ff12b-f606-4170-9fa6-d3b74079769a",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "2f90a220-9c1b-44a7-ae98-a4debde61b1a",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e3"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 3
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "7b54c834-2295-4ef2-b68a-0829715c6d1f",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "a4eaf74c-5b3a-4861-975e-dbe4eb3999d4",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e4"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 4
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "9760a241-814f-4927-82b1-6d8a7c92782a",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "3806e3fd-64ab-410a-b99c-d6dd7b23e119",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e5"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 5
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "ff285fe3-1195-41a9-b074-d791b8a39f61",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "2ecb9484-8707-4bf8-b3c6-bba9e638843b",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e6"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 6
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "541a0bd8-26b5-4d5f-af52-9d817fa58a10",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "3c513e97-3059-4336-b6c5-e95495c3f165",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e7"
+                        },
+                        "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
+                        "port_number": 7
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e0"
+                        },
+                        "node_id": "bb77b7e1-2c32-4b4a-80e4-e5dd12083b6d",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "90da2bba-fb3a-4802-ba23-b458b29b3ea1",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e1"
+                        },
+                        "node_id": "20e39d73-a4f4-44d2-9fec-d0ae0ee45cc0",
+                        "port_number": 1
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-size: 10;",
+                            "text": "e4"
+                        },
+                        "node_id": "25e7588b-34ca-459f-bfea-7da9c5472bbd",
+                        "port_number": 4
+                    }
+                ],
+                "suspend": false
             }
         ],
         "nodes": [
@@ -1348,9 +1608,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5002,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1364,10 +1624,45 @@
                 "locked": false,
                 "name": "WAN-10GE",
                 "node_id": "ed28d7af-6005-4544-a22f-d85170e42c7e",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1377,9 +1672,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5004,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 45,
@@ -1393,10 +1688,45 @@
                 "locked": false,
                 "name": "NGFW-Perimeter",
                 "node_id": "69db3534-e525-4eeb-9eeb-d2a6ba9e362a",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/firewall.svg",
                 "template_id": null,
                 "width": 66,
@@ -1406,9 +1736,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5006,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 59,
@@ -1422,10 +1752,45 @@
                 "locked": false,
                 "name": "SPAN-Mirror",
                 "node_id": "19689cea-d285-4a1b-847a-681ee08444b1",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/computer.svg",
                 "template_id": null,
                 "width": 65,
@@ -1435,9 +1800,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5008,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1451,10 +1816,45 @@
                 "locked": false,
                 "name": "Inside-Trunk-8021Q",
                 "node_id": "bd766e2f-34ac-403b-948c-e96296f3f4fc",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1464,9 +1864,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5010,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 45,
@@ -1480,10 +1880,45 @@
                 "locked": false,
                 "name": "IDS-NSM-TAP",
                 "node_id": "bb77b7e1-2c32-4b4a-80e4-e5dd12083b6d",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/firewall.svg",
                 "template_id": null,
                 "width": 66,
@@ -1493,9 +1928,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5012,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1509,10 +1944,45 @@
                 "locked": false,
                 "name": "CORE-L3-Distribution",
                 "node_id": "8c9078d9-d44f-4c63-964d-964bd37f7160",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1522,9 +1992,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5014,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 70,
@@ -1538,10 +2008,45 @@
                 "locked": false,
                 "name": "MGMT-OPS-Path",
                 "node_id": "5e593cc0-5726-4749-86e9-0a5a5f56993a",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/server.svg",
                 "template_id": null,
                 "width": 49,
@@ -1551,9 +2056,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5016,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 70,
@@ -1567,10 +2072,45 @@
                 "locked": false,
                 "name": "SOC-SCADA-Con",
                 "node_id": "20e39d73-a4f4-44d2-9fec-d0ae0ee45cc0",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/server.svg",
                 "template_id": null,
                 "width": 49,
@@ -1580,9 +2120,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5018,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1596,10 +2136,45 @@
                 "locked": false,
                 "name": "10G-VLAN-10",
                 "node_id": "97c967e3-f40d-42a2-9e98-f3ae40d3404c",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1609,9 +2184,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5020,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1625,10 +2200,45 @@
                 "locked": false,
                 "name": "10G-VLAN-20",
                 "node_id": "a69ff12b-f606-4170-9fa6-d3b74079769a",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1638,9 +2248,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5022,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1654,10 +2264,45 @@
                 "locked": false,
                 "name": "10G-VLAN-30",
                 "node_id": "7b54c834-2295-4ef2-b68a-0829715c6d1f",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1667,9 +2312,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5024,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1683,10 +2328,45 @@
                 "locked": false,
                 "name": "10G-VLAN-40",
                 "node_id": "9760a241-814f-4927-82b1-6d8a7c92782a",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1696,9 +2376,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5026,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1712,10 +2392,45 @@
                 "locked": false,
                 "name": "10G-VLAN-50",
                 "node_id": "ff285fe3-1195-41a9-b074-d791b8a39f61",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -1725,9 +2440,9 @@
             },
             {
                 "compute_id": "local",
-                "console": 5028,
+                "console": null,
                 "console_auto_start": false,
-                "console_type": "telnet",
+                "console_type": null,
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 32,
@@ -1741,10 +2456,45 @@
                 "locked": false,
                 "name": "10G-VLAN-99",
                 "node_id": "541a0bd8-26b5-4d5f-af52-9d817fa58a10",
-                "node_type": "vpcs",
+                "node_type": "ethernet_hub",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {},
+                "properties": {
+                    "ports_mapping": [
+                        {
+                            "name": "Ethernet0",
+                            "port_number": 0
+                        },
+                        {
+                            "name": "Ethernet1",
+                            "port_number": 1
+                        },
+                        {
+                            "name": "Ethernet2",
+                            "port_number": 2
+                        },
+                        {
+                            "name": "Ethernet3",
+                            "port_number": 3
+                        },
+                        {
+                            "name": "Ethernet4",
+                            "port_number": 4
+                        },
+                        {
+                            "name": "Ethernet5",
+                            "port_number": 5
+                        },
+                        {
+                            "name": "Ethernet6",
+                            "port_number": 6
+                        },
+                        {
+                            "name": "Ethernet7",
+                            "port_number": 7
+                        }
+                    ]
+                },
                 "symbol": ":/symbols/ethernet_switch.svg",
                 "template_id": null,
                 "width": 72,
@@ -4290,9 +5040,7 @@
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
-                "properties": {
-                    "startup_script": "ip 192.168.99.10/24 192.168.99.1\n"
-                },
+                "properties": {},
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": null,
                 "width": 65,
@@ -4305,5 +5053,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.59",
-    "zoom": 42
+    "zoom": 71
 }

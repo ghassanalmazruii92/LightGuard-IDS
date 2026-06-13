@@ -113,11 +113,3 @@ async def mfa_status(
     }
 
 
-@router.post("/disable")
-async def disable_mfa(
-    current_user: User = Depends(get_current_user), db: Session = Depends(get_db)
-):
-    current_user.mfa_secret = None
-    current_user.mfa_enabled = False
-    db.commit()
-    return {"message": "MFA disabled successfully"}

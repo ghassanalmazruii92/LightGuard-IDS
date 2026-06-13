@@ -95,18 +95,7 @@ const Settings = ({ user }) => {
       setMfaMsg("Failed to disable MFA");
     }
   };
-  const handleMFADisable = async () => {
-    try {
-      await api.post("/auth/mfa/disable");
-      setMfaStep("idle");
-      setMfaMsg("");
-      setMfaCode("");
-      setMfaQR("");
-    } catch (err) {
-      setMfaMsg("Failed to disable MFA");
-    }
-  };
-  const activeModel = config.active_model || "randomforest";
+    const activeModel = config.active_model || "randomforest";
   const threshold = parseFloat(config.anomaly_threshold || "75.0").toFixed(1);
   const fpRate =
     config.last_fp_rate && config.last_fp_rate !== "N/A"
