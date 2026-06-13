@@ -443,7 +443,7 @@ const Settings = ({ user }) => {
         </div>
       </motion.div>
       <div className="page-footer">
-        LightGuard IDS v3.0 · Detection Engine Active · TLS 1.3 Encrypted ·
+        LightGuard IDS v3.0 · Detection Engine Active · Fernet Encrypted ·
         Tadhamon Smart City — MEC 2025–2026
       </div>
     </div>
