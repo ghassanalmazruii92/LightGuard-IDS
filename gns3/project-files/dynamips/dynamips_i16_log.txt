@@ -1,0 +1,18 @@
+Jun 14 00:39:37.282 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 00:39:37.282 HYPERVISOR: Started on IP = localhost, TCP port = 64711.
+Jun 14 00:39:37.771 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 00:39:37.771 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 00:39:37.771 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 00:39:37.773 HYPERVISOR: exec_cmd: ethsw create TOR-VLAN20 
+Jun 14 00:39:49.841 HYPERVISOR: exec_cmd: nio create_udp udp-822ce376-e0bb-4abf-a46d-97e68b008d24 10011 127.0.0.1 10010 
+Jun 14 00:39:49.841 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN20 udp-822ce376-e0bb-4abf-a46d-97e68b008d24 
+Jun 14 00:39:49.851 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN20 udp-822ce376-e0bb-4abf-a46d-97e68b008d24 1 
+Jun 14 00:39:50.471 HYPERVISOR: exec_cmd: nio create_udp udp-b5e16f4d-f435-49c6-9cdb-3fa907d0e6f2 10026 127.0.0.1 10027 
+Jun 14 00:39:50.472 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN20 udp-b5e16f4d-f435-49c6-9cdb-3fa907d0e6f2 
+Jun 14 00:39:50.492 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN20 udp-b5e16f4d-f435-49c6-9cdb-3fa907d0e6f2 1 
+Jun 14 00:39:50.546 HYPERVISOR: exec_cmd: nio create_udp udp-138b2cc0-5409-4541-afdc-436599c92d7d 10028 127.0.0.1 10029 
+Jun 14 00:39:50.546 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN20 udp-138b2cc0-5409-4541-afdc-436599c92d7d 
+Jun 14 00:39:50.554 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN20 udp-138b2cc0-5409-4541-afdc-436599c92d7d 1 
+Jun 14 00:39:50.609 HYPERVISOR: exec_cmd: nio create_udp udp-423e86b4-101c-4c2d-b7d7-c0e7d28c5ace 10030 127.0.0.1 10031 
+Jun 14 00:39:50.610 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN20 udp-423e86b4-101c-4c2d-b7d7-c0e7d28c5ace 
+Jun 14 00:39:50.617 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN20 udp-423e86b4-101c-4c2d-b7d7-c0e7d28c5ace 1 

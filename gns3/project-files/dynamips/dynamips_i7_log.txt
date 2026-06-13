@@ -1,0 +1,8 @@
+Jun 14 00:39:32.378 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 00:39:32.378 HYPERVISOR: Started on IP = localhost, TCP port = 64684.
+Jun 14 00:39:32.868 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 00:39:32.868 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 00:39:32.869 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 00:39:32.869 HYPERVISOR: exec_cmd: nio_bridge create MGMT-OPS-Path 
+Jun 14 00:39:49.632 HYPERVISOR: exec_cmd: nio create_udp udp-be834218-ca25-4b86-a598-4f1db8ee997d 10006 127.0.0.1 10007 
+Jun 14 00:39:49.633 HYPERVISOR: exec_cmd: nio_bridge add_nio MGMT-OPS-Path udp-be834218-ca25-4b86-a598-4f1db8ee997d 

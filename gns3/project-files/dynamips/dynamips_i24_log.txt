@@ -1,0 +1,12 @@
+Jun 14 00:39:41.643 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 00:39:41.643 HYPERVISOR: Started on IP = localhost, TCP port = 64735.
+Jun 14 00:39:42.132 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 00:39:42.132 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 00:39:42.133 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 00:39:42.133 HYPERVISOR: exec_cmd: ethsw create ACC20-1 
+Jun 14 00:39:50.500 HYPERVISOR: exec_cmd: nio create_udp udp-36f4a2f1-c01e-4ddb-9f15-5d3de3201cbd 10027 127.0.0.1 10026 
+Jun 14 00:39:50.500 HYPERVISOR: exec_cmd: ethsw add_nio ACC20-1 udp-36f4a2f1-c01e-4ddb-9f15-5d3de3201cbd 
+Jun 14 00:39:50.512 HYPERVISOR: exec_cmd: ethsw set_access_port ACC20-1 udp-36f4a2f1-c01e-4ddb-9f15-5d3de3201cbd 1 
+Jun 14 00:39:51.936 HYPERVISOR: exec_cmd: nio create_udp udp-1f23fa5c-54f0-43f9-b58d-451b241cbbbb 10060 127.0.0.1 10061 
+Jun 14 00:39:51.937 HYPERVISOR: exec_cmd: ethsw add_nio ACC20-1 udp-1f23fa5c-54f0-43f9-b58d-451b241cbbbb 
+Jun 14 00:39:51.959 HYPERVISOR: exec_cmd: ethsw set_access_port ACC20-1 udp-1f23fa5c-54f0-43f9-b58d-451b241cbbbb 1 
