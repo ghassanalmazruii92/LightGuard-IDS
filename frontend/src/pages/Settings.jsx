@@ -25,6 +25,7 @@ const Settings = ({ user }) => {
   const [mfaSecret, setMfaSecret] = useState("");
   const [mfaCode, setMfaCode] = useState("");
   const [mfaMsg, setMfaMsg] = useState("");
+  const [mfaEnabled, setMfaEnabled] = useState(false);
   const fetchConfig = async () => {
     setLoading(true);
     try {
@@ -39,6 +40,15 @@ const Settings = ({ user }) => {
 
   useEffect(() => {
     fetchConfig();
+    api
+      .get("/auth/mfa/status")
+      .then((res) => {
+        if (res.data.mfa_enabled) {
+          setMfaEnabled(true);
+          setMfaStep("done");
+        }
+      })
+      .catch(() => {});
   }, []);
 
   const switchModel = async (modelName) => {
@@ -74,20 +84,28 @@ const Settings = ({ user }) => {
     }
   };
 
-  const handleMFAVerify = async () => {
-    if (mfaCode.length !== 6) return;
-    setMfaStep("verifying");
-    setMfaMsg("");
+  const handleMFADisable = async () => {
     try {
-      await api.post("/auth/mfa/verify", { totp_code: mfaCode });
-      setMfaMsg("MFA enabled successfully!");
-      setMfaStep("done");
+      await api.post("/auth/mfa/disable");
+      setMfaStep("idle");
+      setMfaMsg("");
+      setMfaCode("");
+      setMfaQR("");
     } catch (err) {
-      setMfaMsg(err.response?.data?.detail || "Invalid code. Try again.");
-      setMfaStep("error");
+      setMfaMsg("Failed to disable MFA");
     }
   };
-
+  const handleMFADisable = async () => {
+    try {
+      await api.post("/auth/mfa/disable");
+      setMfaStep("idle");
+      setMfaMsg("");
+      setMfaCode("");
+      setMfaQR("");
+    } catch (err) {
+      setMfaMsg("Failed to disable MFA");
+    }
+  };
   const activeModel = config.active_model || "randomforest";
   const threshold = parseFloat(config.anomaly_threshold || "75.0").toFixed(1);
   const fpRate =
@@ -427,17 +445,25 @@ const Settings = ({ user }) => {
 
           {/* Step done */}
           {mfaStep === "done" && (
-            <div className="flex items-center gap-3 p-3 bg-low/10 border border-low/20 rounded-lg">
-              <CheckCircle className="w-5 h-5 text-low flex-shrink-0" />
-              <div>
-                <p className="text-xs font-bold text-low">
-                  MFA successfully enabled
-                </p>
-                <p className="text-xs text-text/50 mt-0.5">
-                  Your account is now protected. You will be asked for a TOTP
-                  code on every login.
-                </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 p-3 bg-low/10 border border-low/20 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-low flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-bold text-low">
+                    MFA successfully enabled
+                  </p>
+                  <p className="text-xs text-text/50 mt-0.5">
+                    Your account is now protected. You will be asked for a TOTP
+                    code on every login.
+                  </p>
+                </div>
               </div>
+              <button
+                onClick={handleMFADisable}
+                className="flex items-center gap-2 px-4 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold rounded-lg transition-colors"
+              >
+                DISABLE MFA
+              </button>
             </div>
           )}
         </div>

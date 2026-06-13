@@ -3,6 +3,7 @@ LightGuard MFA — TOTP-based two-factor authentication (pyotp / RFC 6238).
 Adds a /auth/mfa-setup and /auth/mfa-verify endpoint.
 Stores per-user TOTP secret in the DB (encrypted).
 """
+
 import pyotp
 import qrcode
 import io
@@ -32,9 +33,9 @@ async def mfa_setup(
     """
     secret = pyotp.random_base32()
     totp = pyotp.TOTP(secret)
+    username = str(current_user.username)
     uri = totp.provisioning_uri(
-        name=current_user.username,
-        issuer_name="LightGuard – Tadhamon Smart City"
+        name=username, issuer_name="LightGuard – Tadhamon Smart City"
     )
 
     # Generate QR code
@@ -43,12 +44,12 @@ async def mfa_setup(
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
     buf = io.BytesIO()
-    img.save(buf, format="PNG")
+    img.save(buf, "PNG")
     qr_b64 = base64.b64encode(buf.getvalue()).decode()
 
     # Store secret on user (add mfa_secret column if missing)
     try:
-        current_user.mfa_secret = secret
+        setattr(current_user, "mfa_secret", secret)
         db.commit()
     except Exception:
         db.rollback()
@@ -77,14 +78,46 @@ async def mfa_verify(
     if not secret:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="MFA not configured for this user. Call /auth/mfa/setup first."
+            detail="MFA not configured for this user. Call /auth/mfa/setup first.",
         )
     totp = pyotp.TOTP(secret)
     if not totp.verify(req.totp_code, valid_window=1):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid or expired TOTP code."
+            detail="Invalid or expired TOTP code.",
         )
-    current_user.mfa_enabled = True
+    setattr(current_user, "mfa_enabled", True)
     db.commit()
     return {"status": "verified", "message": "MFA code accepted."}
+
+
+@router.post("/disable")
+async def disable_mfa(
+    current_user: User = Depends(get_current_user), db: Session = Depends(get_db)
+):
+    current_user.mfa_secret = None
+    current_user.mfa_enabled = False
+    db.commit()
+    return {"message": "MFA disabled successfully"}
+
+
+@router.get("/status")
+async def mfa_status(
+    current_user: User = Depends(get_current_user), db: Session = Depends(get_db)
+):
+    return {
+        "mfa_enabled": bool(
+            getattr(current_user, "mfa_enabled", False)
+            and getattr(current_user, "mfa_secret", None)
+        )
+    }
+
+
+@router.post("/disable")
+async def disable_mfa(
+    current_user: User = Depends(get_current_user), db: Session = Depends(get_db)
+):
+    current_user.mfa_secret = None
+    current_user.mfa_enabled = False
+    db.commit()
+    return {"message": "MFA disabled successfully"}

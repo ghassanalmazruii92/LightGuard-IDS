@@ -1314,42 +1314,6 @@
                     }
                 ],
                 "suspend": false
-            },
-            {
-                "filters": {},
-                "link_id": "8bd00ec9-e82e-4263-a963-725d38e5d71c",
-                "link_style": {
-                    "color": "#000000",
-                    "type": 1,
-                    "width": 2
-                },
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "nat0",
-                            "x": 73,
-                            "y": 74
-                        },
-                        "node_id": "f18d7990-49b2-4680-95eb-eba1f5f2a0a6",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e4",
-                            "x": 41,
-                            "y": -23
-                        },
-                        "node_id": "25e7588b-34ca-459f-bfea-7da9c5472bbd",
-                        "port_number": 4
-                    }
-                ],
-                "suspend": false
             }
         ],
         "nodes": [
@@ -1465,7 +1429,7 @@
                 "symbol": ":/symbols/computer.svg",
                 "template_id": null,
                 "width": 65,
-                "x": -461,
+                "x": -463,
                 "y": -261,
                 "z": 1
             },
@@ -3837,7 +3801,7 @@
                 "symbol": ":/symbols/pc.svg",
                 "template_id": null,
                 "width": 65,
-                "x": -1099,
+                "x": -1096,
                 "y": 581,
                 "z": 1
             },
@@ -3895,7 +3859,7 @@
                 "symbol": ":/symbols/pc.svg",
                 "template_id": null,
                 "width": 65,
-                "x": -875,
+                "x": -870,
                 "y": 578,
                 "z": 1
             },
@@ -4011,7 +3975,7 @@
                 "symbol": ":/symbols/pc.svg",
                 "template_id": null,
                 "width": 65,
-                "x": -335,
+                "x": -343,
                 "y": 574,
                 "z": 1
             },
@@ -4272,7 +4236,7 @@
                 "symbol": ":/symbols/computer.svg",
                 "template_id": null,
                 "width": 65,
-                "x": 740,
+                "x": 742,
                 "y": 643,
                 "z": 1
             },
@@ -4307,9 +4271,9 @@
             },
             {
                 "compute_id": "local",
-                "console": null,
-                "console_auto_start": false,
-                "console_type": "none",
+                "console": 5088,
+                "console_auto_start": true,
+                "console_type": "telnet",
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 59,
@@ -4332,46 +4296,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": null,
                 "width": 65,
-                "x": 600,
-                "y": -200,
-                "z": 1
-            },
-            {
-                "compute_id": "vm",
-                "console": null,
-                "console_auto_start": false,
-                "console_type": null,
-                "custom_adapters": [],
-                "first_port_name": null,
-                "height": 71,
-                "label": {
-                    "rotation": 0,
-                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "NAT1",
-                    "x": 57,
-                    "y": -25
-                },
-                "locked": false,
-                "name": "NAT1",
-                "node_id": "f18d7990-49b2-4680-95eb-eba1f5f2a0a6",
-                "node_type": "nat",
-                "port_name_format": "Ethernet{0}",
-                "port_segment_size": 0,
-                "properties": {
-                    "ports_mapping": [
-                        {
-                            "interface": "virbr0",
-                            "name": "nat0",
-                            "port_number": 0,
-                            "type": "ethernet"
-                        }
-                    ]
-                },
-                "symbol": ":/symbols/nat.svg",
-                "template_id": "df8f4ea9-33b7-3e96-86a2-c39bc9bb649c",
-                "width": 159,
-                "x": 783,
-                "y": -506,
+                "x": 843,
+                "y": 26,
                 "z": 1
             }
         ]
@@ -4379,5 +4305,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.59",
-    "zoom": 35
+    "zoom": 42
 }
