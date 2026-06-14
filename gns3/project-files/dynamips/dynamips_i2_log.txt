@@ -1,0 +1,12 @@
+Jun 14 15:32:55.358 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 15:32:55.359 HYPERVISOR: Started on IP = localhost, TCP port = 63916.
+Jun 14 15:32:55.846 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 15:32:55.847 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 15:32:55.847 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 15:32:55.847 HYPERVISOR: exec_cmd: nio_bridge create NGFW-Perimeter 
+Jun 14 15:33:15.210 HYPERVISOR: exec_cmd: nio create_udp udp-d46eb40c-fc0a-44aa-9c80-8d6b7b4a7c65 10002 127.0.0.1 10003 
+Jun 14 15:33:15.211 HYPERVISOR: exec_cmd: nio_bridge add_nio NGFW-Perimeter udp-d46eb40c-fc0a-44aa-9c80-8d6b7b4a7c65 
+Jun 14 15:33:17.595 HYPERVISOR: exec_cmd: nio create_udp udp-fdc4031c-58b9-4e12-951e-8e0af9301038 10091 127.0.0.1 10090 
+Jun 14 15:33:17.596 HYPERVISOR: exec_cmd: nio_bridge add_nio NGFW-Perimeter udp-fdc4031c-58b9-4e12-951e-8e0af9301038 
+Jun 14 15:33:17.639 HYPERVISOR: exec_cmd: nio create_udp udp-ace54340-541c-419f-84e1-69cf12e36890 10092 127.0.0.1 10093 
+Jun 14 15:33:17.640 HYPERVISOR: exec_cmd: nio_bridge add_nio NGFW-Perimeter udp-ace54340-541c-419f-84e1-69cf12e36890 

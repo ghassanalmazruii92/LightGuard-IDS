@@ -1,0 +1,10 @@
+Jun 14 15:32:58.696 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 15:32:58.697 HYPERVISOR: Started on IP = localhost, TCP port = 63934.
+Jun 14 15:32:59.185 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 15:32:59.185 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 15:32:59.185 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 15:32:59.186 HYPERVISOR: exec_cmd: nio_bridge create SOC-SCADA-Con 
+Jun 14 15:33:15.358 HYPERVISOR: exec_cmd: nio create_udp udp-229bdc1e-8aed-41b0-98e1-c1fab617e930 10007 127.0.0.1 10006 
+Jun 14 15:33:15.359 HYPERVISOR: exec_cmd: nio_bridge add_nio SOC-SCADA-Con udp-229bdc1e-8aed-41b0-98e1-c1fab617e930 
+Jun 14 15:33:18.137 HYPERVISOR: exec_cmd: nio create_udp udp-252c1524-003e-48d4-9202-7ff856ed2b82 10108 127.0.0.1 10109 
+Jun 14 15:33:18.138 HYPERVISOR: exec_cmd: nio_bridge add_nio SOC-SCADA-Con udp-252c1524-003e-48d4-9202-7ff856ed2b82 

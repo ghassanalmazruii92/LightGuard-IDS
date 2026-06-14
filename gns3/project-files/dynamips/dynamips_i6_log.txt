@@ -1,0 +1,22 @@
+Jun 14 15:32:57.569 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 15:32:57.570 HYPERVISOR: Started on IP = localhost, TCP port = 63928.
+Jun 14 15:32:58.056 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 15:32:58.058 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 15:32:58.059 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 15:32:58.059 HYPERVISOR: exec_cmd: nio_bridge create CORE-L3-Distribution 
+Jun 14 15:33:15.296 HYPERVISOR: exec_cmd: nio create_udp udp-69c19ee1-cdf6-4fa3-bbdd-4af0be7796aa 10005 127.0.0.1 10004 
+Jun 14 15:33:15.297 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-69c19ee1-cdf6-4fa3-bbdd-4af0be7796aa 
+Jun 14 15:33:17.701 HYPERVISOR: exec_cmd: nio create_udp udp-887df679-a7af-4d94-b46f-86514c8254f0 10094 127.0.0.1 10095 
+Jun 14 15:33:17.701 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-887df679-a7af-4d94-b46f-86514c8254f0 
+Jun 14 15:33:17.765 HYPERVISOR: exec_cmd: nio create_udp udp-af62ab84-805d-4f6c-895a-3c1893bbf6ff 10096 127.0.0.1 10097 
+Jun 14 15:33:17.765 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-af62ab84-805d-4f6c-895a-3c1893bbf6ff 
+Jun 14 15:33:17.826 HYPERVISOR: exec_cmd: nio create_udp udp-a0e23367-b7f3-4820-891f-8f4bfa82f6f2 10098 127.0.0.1 10099 
+Jun 14 15:33:17.827 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-a0e23367-b7f3-4820-891f-8f4bfa82f6f2 
+Jun 14 15:33:17.890 HYPERVISOR: exec_cmd: nio create_udp udp-2e235a91-2097-4043-a932-adcea2dc0c58 10100 127.0.0.1 10101 
+Jun 14 15:33:17.891 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-2e235a91-2097-4043-a932-adcea2dc0c58 
+Jun 14 15:33:17.950 HYPERVISOR: exec_cmd: nio create_udp udp-ee741022-3280-4572-b420-1ad52acdaea7 10102 127.0.0.1 10103 
+Jun 14 15:33:17.950 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-ee741022-3280-4572-b420-1ad52acdaea7 
+Jun 14 15:33:18.012 HYPERVISOR: exec_cmd: nio create_udp udp-42900b37-f221-41d0-af56-3a55163fb4e8 10104 127.0.0.1 10105 
+Jun 14 15:33:18.013 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-42900b37-f221-41d0-af56-3a55163fb4e8 
+Jun 14 15:33:18.077 HYPERVISOR: exec_cmd: nio create_udp udp-d876c6f7-d195-4cad-b804-a1fe4aabbfaf 10106 127.0.0.1 10107 
+Jun 14 15:33:18.078 HYPERVISOR: exec_cmd: nio_bridge add_nio CORE-L3-Distribution udp-d876c6f7-d195-4cad-b804-a1fe4aabbfaf 

@@ -1,0 +1,21 @@
+Jun 14 15:33:05.272 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 15:33:05.273 HYPERVISOR: Started on IP = localhost, TCP port = 63970.
+Jun 14 15:33:05.752 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 15:33:05.753 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 15:33:05.754 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 15:33:05.754 HYPERVISOR: exec_cmd: ethsw create TOR-VLAN99 
+Jun 14 15:33:15.732 HYPERVISOR: exec_cmd: nio create_udp udp-c302c594-373f-4538-a740-96f3342f97a4 10019 127.0.0.1 10018 
+Jun 14 15:33:15.733 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN99 udp-c302c594-373f-4538-a740-96f3342f97a4 
+Jun 14 15:33:15.748 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN99 udp-c302c594-373f-4538-a740-96f3342f97a4 1 
+Jun 14 15:33:16.640 HYPERVISOR: exec_cmd: nio create_udp udp-654d9a9a-a2a5-47c7-8c5f-3016780108a9 10048 127.0.0.1 10049 
+Jun 14 15:33:16.640 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN99 udp-654d9a9a-a2a5-47c7-8c5f-3016780108a9 
+Jun 14 15:33:16.658 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN99 udp-654d9a9a-a2a5-47c7-8c5f-3016780108a9 1 
+Jun 14 15:33:16.706 HYPERVISOR: exec_cmd: nio create_udp udp-440eeb97-d09e-4e92-baf6-aad1db0603f4 10050 127.0.0.1 10051 
+Jun 14 15:33:16.706 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN99 udp-440eeb97-d09e-4e92-baf6-aad1db0603f4 
+Jun 14 15:33:16.720 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN99 udp-440eeb97-d09e-4e92-baf6-aad1db0603f4 1 
+Jun 14 15:33:16.768 HYPERVISOR: exec_cmd: nio create_udp udp-d28ab546-18fd-4bc3-b635-ef5665fdcabd 10052 127.0.0.1 10053 
+Jun 14 15:33:16.769 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN99 udp-d28ab546-18fd-4bc3-b635-ef5665fdcabd 
+Jun 14 15:33:16.782 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN99 udp-d28ab546-18fd-4bc3-b635-ef5665fdcabd 1 
+Jun 14 15:33:18.153 HYPERVISOR: exec_cmd: nio create_udp udp-f07d6e29-f15f-4c26-a5c5-b86146da76ee 10109 127.0.0.1 10108 
+Jun 14 15:33:18.154 HYPERVISOR: exec_cmd: ethsw add_nio TOR-VLAN99 udp-f07d6e29-f15f-4c26-a5c5-b86146da76ee 
+Jun 14 15:33:18.170 HYPERVISOR: exec_cmd: ethsw set_access_port TOR-VLAN99 udp-f07d6e29-f15f-4c26-a5c5-b86146da76ee 1 

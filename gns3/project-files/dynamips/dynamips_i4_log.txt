@@ -1,0 +1,10 @@
+Jun 14 15:32:56.472 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 14 15:32:56.473 HYPERVISOR: Started on IP = localhost, TCP port = 63922.
+Jun 14 15:32:56.961 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 14 15:32:56.962 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips 
+Jun 14 15:32:56.963 GENERAL: working_dir=C:\Users\Ghass\Downloads\lightguard11\gns3\project-files\dynamips
+Jun 14 15:32:56.963 HYPERVISOR: exec_cmd: nio_bridge create Inside-Trunk-8021Q 
+Jun 14 15:33:15.272 HYPERVISOR: exec_cmd: nio create_udp udp-64fcb35b-6672-4899-8ae1-86cebf734ddb 10004 127.0.0.1 10005 
+Jun 14 15:33:15.272 HYPERVISOR: exec_cmd: nio_bridge add_nio Inside-Trunk-8021Q udp-64fcb35b-6672-4899-8ae1-86cebf734ddb 
+Jun 14 15:33:17.657 HYPERVISOR: exec_cmd: nio create_udp udp-0606240a-bd1c-4795-96a7-00c683e7d9cd 10093 127.0.0.1 10092 
+Jun 14 15:33:17.658 HYPERVISOR: exec_cmd: nio_bridge add_nio Inside-Trunk-8021Q udp-0606240a-bd1c-4795-96a7-00c683e7d9cd 
