@@ -53,3 +53,5 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+gns3/project-files/dynamips/
