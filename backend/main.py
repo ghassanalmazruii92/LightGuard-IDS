@@ -20,6 +20,7 @@ from backend.api import ai_chat
 from backend.api import detection_config, fog_forward
 from backend.api import network as network_api
 from backend.api import packets as packets_api
+
 try:
     from security.mfa import router as mfa_router
 except ImportError:
@@ -108,28 +109,34 @@ async def startup_event():
     db = SessionLocal()
     try:
         if not db.query(User).filter(User.username == "admin").first():
-            db.add(User(
-                username="admin",
-                hashed_password=get_password_hash("lightguard123"),
-                role=UserRole.ADMIN,
-            ))
+            db.add(
+                User(
+                    username="admin",
+                    hashed_password=get_password_hash("lightguard123"),
+                    role=UserRole.ADMIN,
+                )
+            )
         if not db.query(User).filter(User.username == "viewer").first():
-            db.add(User(
-                username="viewer",
-                hashed_password=get_password_hash("viewer123"),
-                role=UserRole.VIEWER,
-            ))
+            db.add(
+                User(
+                    username="viewer",
+                    hashed_password=get_password_hash("viewer123"),
+                    role=UserRole.VIEWER,
+                )
+            )
         for username, password, role in (
             ("analyst", "analyst123", UserRole.ANALYST),
             ("monitor", "monitor123", UserRole.MONITOR),
             ("technical", "technical123", UserRole.TECHNICAL),
         ):
             if not db.query(User).filter(User.username == username).first():
-                db.add(User(
-                    username=username,
-                    hashed_password=get_password_hash(password),
-                    role=role,
-                ))
+                db.add(
+                    User(
+                        username=username,
+                        hashed_password=get_password_hash(password),
+                        role=role,
+                    )
+                )
         db.commit()
     finally:
         db.close()
@@ -141,6 +148,7 @@ async def startup_event():
         sync_control_center_vlan99_if_needed,
         sync_tadhamon_demo_locale_if_needed,
     )
+
     seed_tadhamon_data()
     sync_control_center_vlan99_if_needed()
     sync_tadhamon_demo_locale_if_needed()
@@ -152,10 +160,12 @@ async def startup_event():
 
     # 6. Start adaptive optimizer (Feature 1)
     from backend.ids.adaptive_optimizer import start_adaptive_optimizer
+
     start_adaptive_optimizer()
 
     # 7. Initialise encryption key (auto-generates if missing) (Feature 3)
     from backend.security.encryption import _get_fernet
+
     _get_fernet()
 
     # 5. Choose scanner based on MOCK_MODE
@@ -166,19 +176,21 @@ async def startup_event():
     if mock_mode:
         # No-root socket scanner (RustScan → TCP connect)
         from backend.ids.socket_scanner import SocketScanner
-        cidr     = os.getenv("NETWORK_CIDR") or get_local_cidr()
+
+        cidr = os.getenv("NETWORK_CIDR") or get_local_cidr()
         interval = int(os.getenv("SCAN_INTERVAL", "60"))
-        scanner  = SocketScanner(cidr=cidr, interval=interval)
+        scanner = SocketScanner(cidr=cidr, interval=interval)
         scanner.start()
         app.state.scanner = scanner
         print(f"[startup] SocketScanner started – CIDR: {cidr}, interval: {interval}s")
     else:
         # Real scanner (needs root / cap_net_raw)
         from backend.ids.real_scanner import TadhamonScanner
-        cidr     = os.getenv("NETWORK_CIDR") or get_local_cidr()
+
+        cidr = os.getenv("NETWORK_CIDR") or get_local_cidr()
         interval = int(os.getenv("SCAN_INTERVAL", "30"))
-        rate     = int(os.getenv("MASSCAN_RATE", "1000"))
-        scanner  = TadhamonScanner(cidr=cidr, interval=interval, rate=rate)
+        rate = int(os.getenv("MASSCAN_RATE", "1000"))
+        scanner = TadhamonScanner(cidr=cidr, interval=interval, rate=rate)
         scanner.start()
         app.state.scanner = scanner
         print(f"[startup] TadhamonScanner (real) started – CIDR: {cidr}")
@@ -216,21 +228,23 @@ async def websocket_packets(websocket: WebSocket):
 
 
 # ── Routers ───────────────────────────────────────────────────────────────
-app.include_router(auth_router.router,  prefix="/auth",         tags=["auth"])
-app.include_router(alerts.router,       prefix="/api/alerts",   tags=["alerts"])
-app.include_router(logs.router,         prefix="/api/logs",     tags=["logs"])
-app.include_router(stats.router,        prefix="/api/stats",    tags=["stats"])
-app.include_router(users.router,        prefix="/api/users",    tags=["users"])
-app.include_router(devices.router)                              # prefix="/api/devices" inside
-app.include_router(scenarios.router,        prefix="/api")      # → /api/scenarios
-app.include_router(ai_chat.router,          prefix="/api")      # → /api/ai
-app.include_router(detection_config.router, prefix="/api")      # → /api/detection-config
-app.include_router(fog_forward.router,      prefix="/api")      # → /api/fog/forward
-app.include_router(attack_patterns_router,  prefix="/api")      # → /api/ids/report-login-failure
-app.include_router(network_api.router)                          # → /api/network/...
-app.include_router(packets_api.router)                          # → /api/packets/...
+app.include_router(auth_router.router, prefix="/auth", tags=["auth"])
+app.include_router(alerts.router, prefix="/api/alerts", tags=["alerts"])
+app.include_router(logs.router, prefix="/api/logs", tags=["logs"])
+app.include_router(stats.router, prefix="/api/stats", tags=["stats"])
+app.include_router(users.router, prefix="/api/users", tags=["users"])
+app.include_router(devices.router)  # prefix="/api/devices" inside
+app.include_router(scenarios.router, prefix="/api")  # → /api/scenarios
+app.include_router(ai_chat.router, prefix="/api")  # → /api/ai
+app.include_router(detection_config.router, prefix="/api")  # → /api/detection-config
+app.include_router(fog_forward.router, prefix="/api")  # → /api/fog/forward
+app.include_router(
+    attack_patterns_router, prefix="/api"
+)  # → /api/ids/report-login-failure
+app.include_router(network_api.router)  # → /api/network/...
+app.include_router(packets_api.router)  # → /api/packets/...
 if mfa_router is not None:
-    app.include_router(mfa_router)                                      # → /auth/mfa/...
+    app.include_router(mfa_router)  # → /auth/mfa/...
 
 
 # ── Static files (React SPA) ──────────────────────────────────────────────
@@ -253,8 +267,12 @@ if os.path.exists(static_path):
         # Don't serve SPA for API / auth / websocket paths
         if full_path.startswith(("api/", "auth/", "ws/")):
             from fastapi import Response
-            return Response(status_code=404, content='{"detail":"Not Found"}',
-                            media_type="application/json")
+
+            return Response(
+                status_code=404,
+                content='{"detail":"Not Found"}',
+                media_type="application/json",
+            )
         if "." in full_path and not full_path.endswith(".html"):
             file_path = os.path.join(static_path, full_path)
             if os.path.exists(file_path):
@@ -263,7 +281,9 @@ if os.path.exists(static_path):
         if os.path.exists(index_file):
             return FileResponse(index_file)
         return {"message": "LightGuard IDS – Static folder not found."}
+
 else:
+
     @app.get("/{full_path:path}")
     async def root_fallback(full_path: str):
         return {"message": "LightGuard IDS – Static folder not found."}

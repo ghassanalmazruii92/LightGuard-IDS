@@ -961,3 +961,71 @@ def seed_network_topology(force: bool = False):
         print(f"[seeds] Error seeding network topology: {e}")
     finally:
         db.close()
+
+
+# ── Demo Users seed ───────────────────────────────────────────────────────
+
+DEMO_USERS = [
+    # username       password          role
+    ("admin",       "lightguard123",  "ADMIN"),
+    ("analyst",     "analyst123",     "ANALYST"),
+    ("monitor",     "monitor123",     "MONITOR"),
+    ("technical",   "technical123",   "TECHNICAL"),
+    ("viewer",      "viewer123",      "VIEWER"),
+]
+
+
+def seed_demo_users(force: bool = False) -> None:
+    """
+    Create the five demo accounts if they don't already exist.
+    Safe to call at every startup — skips existing usernames.
+    Set force=True to reset all demo user passwords.
+    """
+    from backend.database import User, UserRole
+    from passlib.context import CryptContext
+
+    pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
+
+    role_map = {
+        "ADMIN":     UserRole.ADMIN,
+        "ANALYST":   UserRole.ANALYST,
+        "MONITOR":   UserRole.MONITOR,
+        "VIEWER":    UserRole.VIEWER,
+        "TECHNICAL": UserRole.TECHNICAL,
+    }
+
+    db: Session = SessionLocal()
+    try:
+        created = 0
+        updated = 0
+        for username, password, role_str in DEMO_USERS:
+            hashed = pwd_context.hash(password)
+            role_enum = role_map[role_str]
+            existing = db.query(User).filter(User.username == username).first()
+            if existing:
+                if force:
+                    existing.hashed_password = hashed
+                    existing.role = role_enum
+                    updated += 1
+            else:
+                db.add(User(
+                    username=username,
+                    hashed_password=hashed,
+                    role=role_enum,
+                    mfa_enabled=False,
+                ))
+                created += 1
+
+        db.commit()
+        if created:
+            print(f"[seeds] Created {created} demo user(s).")
+        if updated:
+            print(f"[seeds] Reset {updated} demo user password(s).")
+        if not created and not updated:
+            print("[seeds] Demo users already exist — skipping.")
+    except Exception as e:
+        db.rollback()
+        print(f"[seeds] Error seeding users: {e}")
+        raise
+    finally:
+        db.close()

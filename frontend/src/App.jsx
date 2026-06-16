@@ -20,6 +20,24 @@ import AIChat from "./components/AIChat";
 import LivePackets from "./pages/LivePackets";
 import ToastNotifier from "./components/ToastNotifier";
 
+// Role access map — must match backend UserRole enum values exactly
+// admin     = SOC Admin      (Level 4)
+// analyst   = SOC Analyst    (Level 3)
+// monitor   = Monitoring Staff(Level 2)
+// technical = Technical Staff (Level 1)
+// viewer    = Read-Only Viewer(Level 0) — Dashboard only, no entry here
+const ROUTE_ROLES = {
+  "/live-packets": ["admin", "analyst", "monitor"],
+  "/alerts":       ["admin", "analyst"],
+  "/logs":         ["admin", "analyst", "monitor"],
+  "/topology":     ["admin", "analyst", "monitor"],
+  "/devices":      ["admin", "technical"],
+  "/fog-nodes":    ["admin", "technical"],
+  "/scenarios":    ["admin", "analyst"],
+  "/users":        ["admin"],
+  "/settings":     ["admin", "analyst"],
+};
+
 export default function App() {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
@@ -46,9 +64,12 @@ export default function App() {
     localStorage.removeItem("token");
   };
 
-  const Layout = ({ children }) => {
+  const Layout = ({ children, path }) => {
     if (!ready) return null;
     if (!user) return <Navigate to="/login" />;
+    // Check if user has permission for this route
+    const allowed = ROUTE_ROLES[path];
+    if (allowed && !allowed.includes(user.role)) return <Navigate to="/" />;
     return (
       <div
         style={{ display: "flex", minHeight: "100vh", background: "#020817" }}
@@ -130,7 +151,7 @@ export default function App() {
         <Route
           path="/devices"
           element={
-            <Layout>
+            <Layout path="/devices">
               <Devices user={user} />
             </Layout>
           }
@@ -138,7 +159,7 @@ export default function App() {
         <Route
           path="/scenarios"
           element={
-            <Layout>
+            <Layout path="/scenarios">
               <Scenarios user={user} />
             </Layout>
           }
@@ -146,7 +167,7 @@ export default function App() {
         <Route
           path="/alerts"
           element={
-            <Layout>
+            <Layout path="/alerts">
               <Alerts user={user} />
             </Layout>
           }
@@ -154,7 +175,7 @@ export default function App() {
         <Route
           path="/logs"
           element={
-            <Layout>
+            <Layout path="/logs">
               <Logs user={user} />
             </Layout>
           }
@@ -162,7 +183,7 @@ export default function App() {
         <Route
           path="/fog-nodes"
           element={
-            <Layout>
+            <Layout path="/fog-nodes">
               <FogNodes user={user} />
             </Layout>
           }
@@ -170,7 +191,7 @@ export default function App() {
         <Route
           path="/topology"
           element={
-            <Layout>
+            <Layout path="/topology">
               <Topology user={user} />
             </Layout>
           }
@@ -178,7 +199,7 @@ export default function App() {
         <Route
           path="/users"
           element={
-            <Layout>
+            <Layout path="/users">
               <Users user={user} />
             </Layout>
           }
@@ -186,7 +207,7 @@ export default function App() {
         <Route
           path="/settings"
           element={
-            <Layout>
+            <Layout path="/settings">
               <Settings user={user} />
             </Layout>
           }
@@ -194,7 +215,7 @@ export default function App() {
         <Route
           path="/live-packets"
           element={
-            <Layout>
+            <Layout path="/live-packets">
               <LivePackets user={user} />
             </Layout>
           }

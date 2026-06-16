@@ -91,11 +91,34 @@ const Settings = ({ user }) => {
       setMfaMsg("");
       setMfaCode("");
       setMfaQR("");
+      setMfaEnabled(false);
     } catch (err) {
       setMfaMsg("Failed to disable MFA");
     }
   };
-    const activeModel = config.active_model || "randomforest";
+
+  const handleMFAVerify = async () => {
+    setMfaStep("verifying");
+    setMfaMsg("");
+    try {
+      await api.post("/auth/mfa/verify", { code: mfaCode });
+      setMfaStep("done");
+      setMfaEnabled(true);
+      setMfaMsg("");
+    } catch (err) {
+      setMfaMsg(err.response?.data?.detail || "Invalid code. Try again.");
+      setMfaStep("scanned");
+    }
+  };
+
+  const handleMFACancel = () => {
+    setMfaStep("idle");
+    setMfaMsg("");
+    setMfaCode("");
+    setMfaQR("");
+    setMfaSecret("");
+  };
+  const activeModel = config.active_model || "randomforest";
   const threshold = parseFloat(config.anomaly_threshold || "75.0").toFixed(1);
   const fpRate =
     config.last_fp_rate && config.last_fp_rate !== "N/A"
@@ -423,6 +446,12 @@ const Settings = ({ user }) => {
                 {mfaStep === "verifying"
                   ? "VERIFYING…"
                   : "CONFIRM & ENABLE MFA →"}
+              </button>
+              <button
+                onClick={handleMFACancel}
+                className="w-full px-4 py-2 bg-transparent hover:bg-red-500/10 border border-red-500/20 text-red-400/60 hover:text-red-400 text-xs font-bold rounded-lg transition-colors"
+              >
+                ✕ CANCEL SETUP
               </button>
               {mfaMsg && (
                 <p className="text-xs text-red-400 flex items-center gap-1">

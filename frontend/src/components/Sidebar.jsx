@@ -17,14 +17,14 @@ import {
   UserCog,
   ChevronLeft,
   ChevronRight,
-  Radio,
-  BrainCircuit,
-  Wifi,
-  Lock,
-  Shield,
-  Network,
-  BarChart3,
 } from "lucide-react";
+
+// ─── Role constants (must match backend JWT values) ───────────────────────
+// admin     = SOC Admin      (Level 4) — full access
+// analyst   = SOC Analyst    (Level 3) — alerts, scenarios, reports
+// monitor   = Monitoring Staff(Level 2) — read-only: dashboard, topology, packets, logs
+// technical = Technical Staff (Level 1) — devices & fog nodes
+// viewer    = Read-Only Viewer(Level 0) — dashboard summary only
 
 const NAV = [
   { section: "MAIN" },
@@ -33,12 +33,7 @@ const NAV = [
     path: "/",
     icon: LayoutDashboard,
     tip: "Central monitoring overview for Tadhamon Smart City IDS",
-  },
-  {
-    name: "Topology",
-    path: "/topology",
-    icon: Share2,
-    tip: "Interactive cyber network map with VLAN zone visualization",
+    // All roles can see Dashboard
   },
   {
     name: "Live Traffic",
@@ -46,6 +41,7 @@ const NAV = [
     icon: Activity,
     badge: "LIVE",
     tip: "Real-time packet inspection and anomaly detection feed",
+    roles: ["admin", "analyst", "monitor"],
   },
   {
     name: "Alerts",
@@ -53,59 +49,58 @@ const NAV = [
     icon: Bell,
     badgeCount: true,
     tip: "All detected intrusion events with severity classification",
+    roles: ["admin", "analyst"],
   },
   {
     name: "Logs",
     path: "/logs",
     icon: FileText,
     tip: "SOC-grade audit logs with Source IP, Protocol, and Action",
+    roles: ["admin", "analyst", "monitor"],
   },
   { section: "MONITORING" },
+  {
+    name: "Topology",
+    path: "/topology",
+    icon: Share2,
+    tip: "Interactive cyber network map with VLAN zone visualization",
+    roles: ["admin", "analyst", "monitor"],
+  },
   {
     name: "Devices",
     path: "/devices",
     icon: Monitor,
     tip: "IoT device inventory with risk scores and trust levels",
+    roles: ["admin", "technical"],
   },
   {
     name: "Fog Nodes",
     path: "/fog-nodes",
     icon: Cpu,
     tip: "Fog nodes inspect local IoT traffic near the edge before forwarding to central IDS",
+    roles: ["admin", "technical"],
   },
   {
     name: "Scenarios",
     path: "/scenarios",
     icon: Play,
     tip: "Attack simulation with MITRE ATT&CK mapping for testing detection",
+    roles: ["admin", "analyst"],
   },
   { section: "MANAGEMENT" },
   {
     name: "Users",
     path: "/users",
     icon: UserCog,
-    adminOnly: true,
     tip: "Role-based access control: SOC Admin, Analyst, Monitoring, Technical",
+    roles: ["admin"],
   },
   {
     name: "Settings",
     path: "/settings",
     icon: Settings,
     tip: "AI model, detection thresholds, encryption, and notification config",
-  },
-  { section: "AI ENGINE" },
-  {
-    name: "AI Detection",
-    path: "/settings",
-    icon: BrainCircuit,
-    tip: "RandomForest anomaly detection engine — 98.7% accuracy",
-  },
-  { section: "SYSTEM" },
-  {
-    name: "Network Health",
-    path: "/fog-nodes",
-    icon: Network,
-    tip: "Real-time network health monitoring across all VLAN zones",
+    roles: ["admin", "analyst"],
   },
 ];
 
@@ -317,7 +312,12 @@ export default function Sidebar({ user, onLogout, alertCount = 0 }) {
                   letterSpacing: ".12em",
                 }}
               >
-                SOC Analyst
+                {user?.role === "admin"     ? "SOC Admin"
+                : user?.role === "analyst"  ? "SOC Analyst"
+                : user?.role === "monitor"  ? "Monitoring Staff"
+                : user?.role === "technical"? "Technical Staff"
+                : user?.role === "viewer"   ? "Read-Only Viewer"
+                : user?.role || "Unknown"}
               </p>
             </div>
             <div
@@ -345,7 +345,8 @@ export default function Sidebar({ user, onLogout, alertCount = 0 }) {
         }}
       >
         {NAV.map((item, i) => {
-          if (item.adminOnly && user?.role !== "admin") return null;
+          // Role-based filtering — if roles defined, user must have one of them
+          if (item.roles && !item.roles.includes(user?.role)) return null;
           if (item.section) {
             if (col)
               return (

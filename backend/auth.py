@@ -112,6 +112,16 @@ def analyst_required(current_user: User = Depends(get_current_user)) -> User:
     return current_user
 
 
+def monitor_required(current_user: User = Depends(get_current_user)) -> User:
+    """Allow SOC Admin, SOC Analyst, and Monitoring Staff — read-only access."""
+    if current_user.role not in (UserRole.ADMIN, UserRole.ANALYST, UserRole.MONITOR):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Operation not permitted for this role"
+        )
+    return current_user
+
+
 def technical_required(current_user: User = Depends(get_current_user)) -> User:
     """Allow SOC Admin and Technical Staff configuration actions."""
     if current_user.role not in (UserRole.ADMIN, UserRole.TECHNICAL):
