@@ -57,15 +57,15 @@ const edgeTypes = {
 };
 
 /** Horizontal center used to align WAN → core fabric (looks like rack elevation). */
-const FABRIC_CENTER_X = 884;
+const FABRIC_CENTER_X = 1300;
 
 // ── Layout constants ───────────────────────────────────────────────────────
 const INFRA_Y = 0;
-const VLAN_Y = 304;
-const DEVICE_Y_BASE = 448;
-const VLAN_X_STEP = 278;
-const DEVICE_X_STEP = 132;
-const VLAN_SWITCH_W = 112;
+const VLAN_Y = 420;
+const DEVICE_Y_BASE = 580;
+const VLAN_X_STEP = 500;
+const DEVICE_X_STEP = 155;
+const VLAN_SWITCH_W = 130;
 
 /** Physical-style north–south path; lucide glyphs match NOC diagram tone */
 const NETWORK_FLOW_STEPS = [
@@ -192,11 +192,11 @@ function buildNodes(topoData, pulsing) {
   const cx = FABRIC_CENTER_X;
 
   const infraMap = {
-    internet: { type: "wanCloud", x: cx - 122, y: INFRA_Y + 2 },
-    "firewall-01": { type: "firewall", x: cx - 79, y: INFRA_Y + 108 },
-    "core-switch": { type: "infra", x: cx - 74, y: INFRA_Y + 234 },
-    "control-center": { type: "controlCenter", x: cx + 210, y: INFRA_Y + 224 },
-    "ids-engine": { type: "infra", x: cx - 394, y: INFRA_Y + 226 },
+    internet:        { type: "wanCloud",      x: cx - 140, y: INFRA_Y + 2   },
+    "firewall-01":   { type: "firewall",      x: cx - 90,  y: INFRA_Y + 120 },
+    "core-switch":   { type: "infra",         x: cx - 85,  y: INFRA_Y + 260 },
+    "control-center":{ type: "controlCenter", x: cx + 280, y: INFRA_Y + 248 },
+    "ids-engine":    { type: "infra",         x: cx - 520, y: INFRA_Y + 250 },
   };
 
   topoData.infra.forEach((inf) => {
@@ -241,15 +241,15 @@ function buildNodes(topoData, pulsing) {
       draggable: true,
     });
 
-    const groupW = Math.max(212, devicesInVlan.length * DEVICE_X_STEP + 72);
+    const groupW = Math.max(280, devicesInVlan.length * DEVICE_X_STEP + 100);
     const groupLeft = sx + VLAN_SWITCH_W / 2 - groupW / 2;
 
     nodes.push({
       id: groupId,
       type: "vlanGroup",
-      position: { x: groupLeft, y: DEVICE_Y_BASE - 34 },
+      position: { x: groupLeft, y: DEVICE_Y_BASE - 40 },
       data: { ...vlan, pulsing: isPulsing },
-      style: { width: groupW, minHeight: 136, zIndex: -1 },
+      style: { width: groupW, minHeight: 160, zIndex: -1 },
       draggable: true,
       selectable: false,
     });
@@ -821,7 +821,10 @@ export default function Topology({ user }) {
             nodeTypes={nodeTypes}
             edgeTypes={edgeTypes}
             fitView
-            fitViewOptions={{ padding: 0.12 }}
+            fitViewOptions={{ padding: 0.08, includeHiddenNodes: false }}
+            minZoom={0.15}
+            maxZoom={1.5}
+            defaultViewport={{ zoom: 0.5, x: 0, y: 0 }}
             proOptions={{ hideAttribution: true }}
           >
             <Background
