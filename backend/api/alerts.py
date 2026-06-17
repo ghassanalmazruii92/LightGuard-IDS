@@ -66,7 +66,7 @@ async def get_alert_stats(
     current_user=Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    now = datetime.utcnow()
+    now = datetime.now()
     today_start = datetime(now.year, now.month, now.day)
 
     today_count = db.query(Alert).filter(Alert.timestamp >= today_start).count()

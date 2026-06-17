@@ -50,7 +50,7 @@ class Alert(Base):
     __tablename__ = "alerts"
 
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.utcnow)
+    timestamp = Column(DateTime, default=datetime.now)
     src_ip = Column(String, index=True)
     dst_ip = Column(String, index=True, default="127.0.0.1")
     protocol = Column(String, default="TCP")
@@ -69,7 +69,7 @@ class PacketEvent(Base):
     __tablename__ = "packet_events"
 
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
+    timestamp = Column(DateTime, default=datetime.now, index=True)
     src_ip = Column(String, index=True)
     dst_ip = Column(String, index=True)
     protocol = Column(String, default="TCP", index=True)
@@ -89,7 +89,7 @@ class Event(Base):
     __tablename__ = "events"
 
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.utcnow)
+    timestamp = Column(DateTime, default=datetime.now)
     event_type = Column(String)  # "INFO", "WARNING", "ERROR", "SYSTEM"
     description = Column(Text)
 
@@ -118,8 +118,8 @@ class Device(Base):
     risk_score      = Column(Integer, default=0)
     trusted         = Column(Boolean, default=False)
     source          = Column(String, default="seed")  # "seed" | "discovered" | "manual"
-    first_seen      = Column(DateTime, default=datetime.utcnow)
-    last_seen       = Column(DateTime, default=datetime.utcnow)
+    first_seen      = Column(DateTime, default=datetime.now)
+    last_seen       = Column(DateTime, default=datetime.now)
 
 class Vlan(Base):
     __tablename__ = "vlans"
@@ -170,7 +170,7 @@ def save_device(data: dict):
                         setattr(db_device, key, value)
                 elif hasattr(db_device, key):
                     setattr(db_device, key, value)
-            setattr(db_device, "last_seen", datetime.utcnow())
+            setattr(db_device, "last_seen", datetime.now())
             setattr(db_device, "risk_score", compute_risk_score(db_device))
         else:
             # Insert
@@ -195,7 +195,7 @@ def update_device_status(ip: str, status: str):
         if db_device:
             setattr(db_device, "status", status)
             if status == "online":
-                setattr(db_device, "last_seen", datetime.utcnow())
+                setattr(db_device, "last_seen", datetime.now())
             db.commit()
     finally:
         db.close()

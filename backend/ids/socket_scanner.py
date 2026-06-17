@@ -306,7 +306,7 @@ class SocketScanner(threading.Thread):
         # 2. Process live devices
         for ip in live_ips:
             # If we already know this device and it was scanned recently, skip deep port scan
-            if ip in self.known and (datetime.utcnow() - datetime.fromisoformat(self.known[ip]['last_seen'])).total_seconds() < 3600:
+            if ip in self.known and (datetime.now() - datetime.fromisoformat(self.known[ip]['last_seen'])).total_seconds() < 3600:
                 update_device_status(ip, "online")
                 continue
 
@@ -325,7 +325,7 @@ class SocketScanner(threading.Thread):
                 "status":     "online",
                 "open_ports": ports,
                 "port_count": len(ports),
-                "last_seen":  datetime.utcnow().isoformat(),
+                "last_seen":  datetime.now().isoformat(),
                 "risk_score": risk,
                 "source":     "discovered",   # real device found on the network
             }

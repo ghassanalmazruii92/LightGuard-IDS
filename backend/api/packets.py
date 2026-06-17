@@ -185,7 +185,7 @@ async def packet_stats(
     current_user=Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    since = datetime.utcnow() - timedelta(hours=24)
+    since = datetime.now() - timedelta(hours=24)
     rows = db.query(PacketEvent).filter(PacketEvent.timestamp >= since).all()
     by_protocol: dict[str, int] = {}
     by_source: dict[str, int] = {}

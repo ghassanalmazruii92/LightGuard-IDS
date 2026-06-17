@@ -71,7 +71,7 @@ def run_optimization_cycle() -> dict:
         else:
             action = "no_change"
 
-        now_str = datetime.utcnow().isoformat()
+        now_str = datetime.now().isoformat()
         _set_config(db, "anomaly_threshold", str(round(new_threshold, 2)))
         _set_config(db, "last_tuned", now_str)
         _set_config(db, "last_fp_rate", str(round(fp_rate * 100, 2)))

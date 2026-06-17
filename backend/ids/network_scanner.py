@@ -43,7 +43,7 @@ def arp_sweep(cidr: str) -> list[dict]:
             "ip": received.psrc,
             "mac": received.hwsrc,
             "hostname": _resolve_hostname(received.psrc),
-            "last_seen": datetime.utcnow().isoformat(),
+            "last_seen": datetime.now().isoformat(),
             "status": "online"
         })
     return devices

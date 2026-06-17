@@ -158,7 +158,7 @@ def _log_local(node_id: str, entry: dict) -> None:
             logs = json.loads(_LOG_PATH.read_text())
         except Exception:
             logs = []
-    logs.append({"node_id": node_id, "timestamp": datetime.utcnow().isoformat(), **entry})
+    logs.append({"node_id": node_id, "timestamp": datetime.now().isoformat(), **entry})
     # Keep last 500 entries
     logs = logs[-500:]
     _LOG_PATH.write_text(json.dumps(logs, indent=2))

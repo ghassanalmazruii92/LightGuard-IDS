@@ -105,7 +105,7 @@ async def get_zone_summary(
     zones = {}
     
     # Get alerts today
-    today = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     alerts = db.query(Alert).filter(Alert.timestamp >= today).all()
     
     for device in devices:
@@ -248,7 +248,7 @@ async def trigger_scan(
             device.services = json.dumps(result["services"])
         if result.get("vulnerabilities"):
             device.vulnerabilities = json.dumps(result["vulnerabilities"])
-        device.last_seen = datetime.utcnow()
+        device.last_seen = datetime.now()
         device.risk_score = compute_risk_score(device)
         db.commit()
 

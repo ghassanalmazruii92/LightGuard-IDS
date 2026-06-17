@@ -629,7 +629,7 @@ TADHAMON_DEMO_ATTACK_TYPES = frozenset(t[2] for t in TADHAMON_DEMO_ALERT_TEMPLAT
 def _make_demo_alerts(_devices: list[dict] | None = None) -> list[dict]:
     """Generate realistic demo alerts tied to the seeded devices."""
     alerts = []
-    now = datetime.utcnow()
+    now = datetime.now()
 
     for i, (src, dst, attack, severity, method, desc, zone, role) in enumerate(TADHAMON_DEMO_ALERT_TEMPLATES):
         hours_ago = random.randint(0, 23)
@@ -735,8 +735,8 @@ def sync_tadhamon_demo_locale_if_needed() -> None:
             else:
                 db.add(Device(
                     **fields,
-                    first_seen=datetime.utcnow() - timedelta(days=random.randint(10, 90)),
-                    last_seen=datetime.utcnow() - timedelta(minutes=random.randint(0, 30)),
+                    first_seen=datetime.now() - timedelta(days=random.randint(10, 90)),
+                    last_seen=datetime.now() - timedelta(minutes=random.randint(0, 30)),
                 ))
 
         db.query(Alert).filter(Alert.is_simulation == True).delete(synchronize_session=False)  # noqa: E712
@@ -852,8 +852,8 @@ def seed_tadhamon_data(force: bool = False):
                 trusted=trusted,
                 status=status,
                 source="seed",
-                first_seen=datetime.utcnow() - timedelta(days=random.randint(10, 90)),
-                last_seen=datetime.utcnow() - timedelta(minutes=random.randint(0, 30)),
+                first_seen=datetime.now() - timedelta(days=random.randint(10, 90)),
+                last_seen=datetime.now() - timedelta(minutes=random.randint(0, 30)),
             )
             db.add(device)
 

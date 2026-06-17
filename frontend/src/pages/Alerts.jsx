@@ -183,7 +183,10 @@ export default function Alerts({ user }) {
       "Confidence %",
     ];
     const rows = alerts.map((a) => [
-      new Date(a.timestamp).toLocaleString("en-US"),
+      new Date(a.timestamp).toLocaleString("en-GB", {
+        timeZone: "Asia/Muscat",
+        hour12: true,
+      }),
       a.src_ip,
       a.dst_ip,
       a.protocol,
@@ -651,7 +654,7 @@ export default function Alerts({ user }) {
                           color: "rgba(123,145,176,.55)",
                         }}
                       >
-                        {new Date(a.timestamp).toLocaleString("en-US")}
+                        {}
                       </td>
                       <td
                         className="mono-ip"

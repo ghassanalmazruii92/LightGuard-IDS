@@ -81,7 +81,7 @@ async def evaluation_summary(
     )
     fp_pct = round(100.0 * fp_marked / total_alerts, 2) if total_alerts else 0.0
 
-    since_24h = datetime.utcnow() - timedelta(hours=24)
+    since_24h = datetime.now() - timedelta(hours=24)
     alerts_24h = (
         db.query(func.count(Alert.id)).filter(Alert.timestamp >= since_24h).scalar() or 0
     )
@@ -94,7 +94,7 @@ async def evaluation_summary(
     ml_blob = _load_ml_metrics()
 
     return {
-        "generated_at_utc": datetime.utcnow().isoformat() + "Z",
+        "generated_at_utc": datetime.now().isoformat() + "Z",
         "runtime": {
             "cpu_percent": psutil.cpu_percent(interval=None),
             "memory_percent": memory.percent,
