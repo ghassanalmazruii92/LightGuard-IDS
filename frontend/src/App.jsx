@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,6 +21,47 @@ import AIChat from "./components/AIChat";
 import LivePackets from "./pages/LivePackets";
 import ToastNotifier from "./components/ToastNotifier";
 
+class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            background: "#0f172a",
+            color: "#22d3ee",
+          }}
+        >
+          <h2 style={{ fontSize: "24px" }}>🔄 حدث خطأ في العرض</h2>
+          <button
+            onClick={() => window.location.reload()}
+            style={{
+              marginTop: "20px",
+              padding: "12px 32px",
+              background: "#0e7490",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontSize: "16px",
+            }}
+          >
+            إعادة تحميل
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 // Role access map — must match backend UserRole enum values exactly
 // admin     = SOC Admin      (Level 4)
 // analyst   = SOC Analyst    (Level 3)
@@ -28,14 +70,14 @@ import ToastNotifier from "./components/ToastNotifier";
 // viewer    = Read-Only Viewer(Level 0) — Dashboard only, no entry here
 const ROUTE_ROLES = {
   "/live-packets": ["admin", "analyst", "monitor"],
-  "/alerts":       ["admin", "analyst"],
-  "/logs":         ["admin", "analyst", "monitor"],
-  "/topology":     ["admin", "analyst", "monitor"],
-  "/devices":      ["admin", "technical"],
-  "/fog-nodes":    ["admin", "technical"],
-  "/scenarios":    ["admin", "analyst"],
-  "/users":        ["admin"],
-  "/settings":     ["admin", "analyst"],
+  "/alerts": ["admin", "analyst"],
+  "/logs": ["admin", "analyst", "monitor"],
+  "/topology": ["admin", "analyst", "monitor"],
+  "/devices": ["admin", "technical"],
+  "/fog-nodes": ["admin", "technical"],
+  "/scenarios": ["admin", "analyst"],
+  "/users": ["admin"],
+  "/settings": ["admin", "analyst"],
 };
 
 export default function App() {
@@ -134,95 +176,97 @@ export default function App() {
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/login"
-          element={user ? <Navigate to="/" /> : <Login onLogin={login} />}
-        />
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Dashboard user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/devices"
-          element={
-            <Layout path="/devices">
-              <Devices user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/scenarios"
-          element={
-            <Layout path="/scenarios">
-              <Scenarios user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/alerts"
-          element={
-            <Layout path="/alerts">
-              <Alerts user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/logs"
-          element={
-            <Layout path="/logs">
-              <Logs user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/fog-nodes"
-          element={
-            <Layout path="/fog-nodes">
-              <FogNodes user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/topology"
-          element={
-            <Layout path="/topology">
-              <Topology user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users"
-          element={
-            <Layout path="/users">
-              <Users user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <Layout path="/settings">
-              <Settings user={user} />
-            </Layout>
-          }
-        />
-        <Route
-          path="/live-packets"
-          element={
-            <Layout path="/live-packets">
-              <LivePackets user={user} />
-            </Layout>
-          }
-        />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-      <ToastNotifier />
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <Routes>
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/" /> : <Login onLogin={login} />}
+          />
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Dashboard user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/devices"
+            element={
+              <Layout path="/devices">
+                <Devices user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/scenarios"
+            element={
+              <Layout path="/scenarios">
+                <Scenarios user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/alerts"
+            element={
+              <Layout path="/alerts">
+                <Alerts user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/logs"
+            element={
+              <Layout path="/logs">
+                <Logs user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/fog-nodes"
+            element={
+              <Layout path="/fog-nodes">
+                <FogNodes user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/topology"
+            element={
+              <Layout path="/topology">
+                <Topology user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <Layout path="/users">
+                <Users user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <Layout path="/settings">
+                <Settings user={user} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/live-packets"
+            element={
+              <Layout path="/live-packets">
+                <LivePackets user={user} />
+              </Layout>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <ToastNotifier />
+      </Router>
+    </ErrorBoundary>
   );
 }

@@ -60,7 +60,7 @@ const clean = (r) => {
 };
 const geoIp = (ip) => {
   if (!ip) return { c: "Local", f: "🏠" };
-  const p = ip.split(".").map(Number);
+  const p = (ip || "0.0.0.0").split(".").map(Number);
   if (p[0] === 192 && p[1] === 168) return { c: "Local Network", f: "🏠" };
   const pool = [
     "🇨🇳 China",
@@ -71,7 +71,8 @@ const geoIp = (ip) => {
     "🇧🇷 Brazil",
     "🇰🇷 Korea",
   ];
-  const [f, c] = pool[(p[0] + p[1]) % pool.length].split(" ");
+  const entry = pool[(p[0] + p[1]) % pool.length] || "#64748b #1e293b";
+  const [f, c] = entry.split(" ");
   return { c, f };
 };
 
